@@ -1,12 +1,12 @@
-#define space 10
+#define space 5
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
 #include<stdbool.h>
-#include "BST.h"
+#include "BST.h"       //my header file
 
 
-struct Node* BNode(char* data){
+struct Node* BNode(char* data){     //creates new node when tree is empty
 
   struct Node* node=(struct Node*)malloc(sizeof(node));
   node->data=data;
@@ -14,7 +14,7 @@ struct Node* BNode(char* data){
   return node;
 }
 
-struct Node* Insert(struct Node* x,char* data){
+struct Node* Insert(struct Node* x,char* data){ //Inserts node in tree
   if(x == NULL){              
     x = BNode(data);
   }
@@ -27,7 +27,7 @@ struct Node* Insert(struct Node* x,char* data){
   return x;
 }
 
-struct Node* Remove(struct Node* r,char* data){
+struct Node* Remove(struct Node* r,char* data){   //Removes specific Node
   if(r==NULL)
     return NULL;
 
@@ -61,7 +61,7 @@ struct Node* Remove(struct Node* r,char* data){
   return r;
 }
 
-_Bool find(struct Node* r,char* data){
+_Bool find(struct Node* r,char* data){    //Finds Node and returns T or F
   if(r == NULL){
     return false;
   }
@@ -75,28 +75,28 @@ _Bool find(struct Node* r,char* data){
       return find(r->right,data); 
 }
 
-char findMax(struct Node* r){
+char findMax(struct Node* r){   // Finds max value in tree (used in remove)
   if(r->right != NULL)
     return findMax(r->right);
   return r->value;
   
 }
 
-void inOrder(struct Node*r){
+void inOrder(struct Node*r){ //prints tree in order
   if(r==NULL)
     return;
   
-    inOrder(r->right);
-    printf("%s\n",r->data);
     inOrder(r->left);
+    printf("%s\n",r->data);
+    inOrder(r->right);
   
 }
 
-void printBST(struct Node* r,int s){
+void printBST(struct Node* r,int s){//prints tree in order, tree like state
   if(r==NULL){
     return;
-  }
-
+  }                                 //this code was obtained in 
+                           //geeksforgeeks.org/print-binary-tree-2-dimesnions/
   s+=space;
   printBST(r->right, s);
   printf("\n");
@@ -106,3 +106,6 @@ void printBST(struct Node* r,int s){
   printf("%s\n",r->data);
   printBST(r->left,s);
 }
+
+
+//All this code except for printBST() was transposed from java files done back in CS2
