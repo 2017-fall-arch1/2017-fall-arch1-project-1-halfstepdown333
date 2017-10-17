@@ -3,7 +3,7 @@
 #include<string.h>
 #include<stdlib.h>
 #include<stdbool.h>
-#include "searchTree.h"
+#include "BST.h"
 
 
 struct Node* BNode(char* data){
