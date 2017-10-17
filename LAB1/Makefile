@@ -16,4 +16,4 @@ BSTDEMO.o: BSTDEMO.c BST.h
 clean:
 	rm -f *.o BSTDEMO
 demo: BSTDEMO
-	(echo first;echo"second line";echo"third and last") | ./BSTDEMO
+	 ./BSTDEMO
