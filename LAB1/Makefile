@@ -1,6 +1,6 @@
 all: BSTDEMO
 
-CFLAGS=-g -03
+CFLAGS=-g -O3
 
 
 
@@ -11,7 +11,7 @@ BST.o: BST.c BST.h
 	cc -c $(CFLAGS) BST.c
 
 BSTDEMO.o: BSTDEMO.c BST.h
-	cc-c $(CFLAGS) BSTDEMO.c
+	cc -c $(CFLAGS) BSTDEMO.c
 
 clean:
 	rm -f *.o BSTDEMO

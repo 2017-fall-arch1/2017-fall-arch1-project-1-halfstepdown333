@@ -20,4 +20,16 @@ Input 2 = Display list
 
 ```
 
+
+TO COMPILE
+
+```
+& make
+```
+```
+$ make clean
+```
+```
+$ make demo
+```
 * When adding names to the file please use format LastName,Firstname
